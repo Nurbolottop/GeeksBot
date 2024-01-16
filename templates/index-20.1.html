@@ -1,17 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Education - Onepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.css">
-    <link rel="stylesheet" href="assets/css/flaticon-6.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/education.css">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon-6.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/odometer-theme-default.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/education.css' %}">
 </head>
 <body class="app-edu" data-spy="scroll" data-target=".app-edu-main-navigation" data-offset="80">
     <!-- preloader - start -->
@@ -24,7 +25,7 @@
         <header id="app-edu-main-header" class="app-edu-header-main">
             <div class="container">
                 <div class="app-edu-logo float-left">
-                    <a href="#"><img src="assets/img/education/logo/logo1.png" alt=""></a>
+                    <a href="#"><img src="{% static 'assets/img/education/logo/logo1.png' %}" alt=""></a>
                 </div>
                 <div class="app-edu-main-header-menu clearfix">
                     <div class="header-dia-cta-btn text-center float-right">
@@ -52,7 +53,7 @@
                                 <i class="fas fa-times"></i>
                             </div>
                             <div class="m-brand-logo text-center">
-                                <a href="!#"><img src="assets/img/education/logo/logo1.png" alt=""></a>
+                                <a href="!#"><img src="{% static 'assets/img/education/logo/logo1.png' %}" alt=""></a>
                             </div>
                             <nav class="app-edu-mobile-main-navigation  clearfix ul-li">
                              <ul id="m-main-nav" class="navbar-nav text-capitalize clearfix">
@@ -88,7 +89,7 @@
 
     <!-- Start of banner section
         ============================================= -->  
-        <section id="app-edu-banner" class="app-edu-banner-section" data-background="assets/img/education/banner.png">
+        <section id="app-edu-banner" class="app-edu-banner-section" data-background="{% static 'assets/img/education/banner.png' %}">
             <div class="container">
                 <div class="app-edu-banner-content position-relative">
                     <div class="app-edu-banner-text app-edu-headline pera-content wow fadeFromLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
@@ -97,7 +98,7 @@
                         <a class="banner-btn text-center" href="#">Learn More</a>
                     </div>
                     <div class="app-edu-banner-img">
-                        <img src="assets/img/education/bn-v.png" alt="">
+                        <img src="{% static 'assets/img/education/bn-v.png' %}" alt="">
                     </div>
                 </div>
             </div>
@@ -154,14 +155,14 @@
     <!-- Start of about section
         ============================================= -->
         <section id="app-edu-about" class="app-edu-about-section position-relative">
-            <span class="app-edu-about-shape position-absolute"><img src="assets/img/education/ab-shape1.png" alt=""></span>
-            <span class="app-edu-about-shape2 position-absolute"><img src="assets/img/education/ab-shape2.png" alt=""></span>
+            <span class="app-edu-about-shape position-absolute"><img src="{% static 'assets/img/education/ab-shape1.png' %}" alt=""></span>
+            <span class="app-edu-about-shape2 position-absolute"><img src="{% static 'assets/img/education/ab-shape2.png' %}" alt=""></span>
             <div class="container">
                 <div class="app-edu-about-content">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="app-edu-about-img">
-                                <img src="assets/img/education/ab-v.png" alt="">
+                                <img src="{% static 'assets/img/education/ab-v.png' %}" alt="">
                             </div>
                         </div>
                         <div class="col-lg-5">
@@ -202,7 +203,7 @@
                         <div class="col-lg-4 col-md-6 wow fadeFromUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="app-edu-course-innerbox">
                                 <div class="app-edu-course-img">
-                                    <img src="assets/img/education/course/crs1.png" alt="">
+                                    <img src="{% static 'assets/img/education/course/crs1.png' %}" alt="">
                                 </div>
                                 <div class="app-edu-course-text text-center app-edu-headline position-relative">
                                     <span class="course-cat text-uppercase"><a href="#">Graphic Design</a></span>
@@ -228,7 +229,7 @@
                         <div class="col-lg-4 col-md-6 wow fadeFromUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                             <div class="app-edu-course-innerbox">
                                 <div class="app-edu-course-img">
-                                    <img src="assets/img/education/course/crs2.png" alt="">
+                                    <img src="{% static 'assets/img/education/course/crs2.png' %}" alt="">
                                 </div>
                                 <div class="app-edu-course-text text-center app-edu-headline position-relative">
                                     <span class="course-cat text-uppercase"><a href="#">Graphic Design</a></span>
@@ -254,7 +255,7 @@
                         <div class="col-lg-4 col-md-6 wow fadeFromUp" data-wow-delay="400ms" data-wow-duration="1500ms">
                             <div class="app-edu-course-innerbox">
                                 <div class="app-edu-course-img">
-                                    <img src="assets/img/education/course/crs3.png" alt="">
+                                    <img src="{% static 'assets/img/education/course/crs3.png' %}" alt="">
                                 </div>
                                 <div class="app-edu-course-text text-center app-edu-headline position-relative">
                                     <span class="course-cat text-uppercase"><a href="#">Graphic Design</a></span>
@@ -280,7 +281,7 @@
                         <div class="col-lg-4 col-md-6 wow fadeFromUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                             <div class="app-edu-course-innerbox">
                                 <div class="app-edu-course-img">
-                                    <img src="assets/img/education/course/crs4.png" alt="">
+                                    <img src="{% static 'assets/img/education/course/crs4.png' %}" alt="">
                                 </div>
                                 <div class="app-edu-course-text text-center app-edu-headline position-relative">
                                     <span class="course-cat text-uppercase"><a href="#">Graphic Design</a></span>
@@ -306,7 +307,7 @@
                         <div class="col-lg-4 col-md-6 wow fadeFromUp" data-wow-delay="800ms" data-wow-duration="1500ms">
                             <div class="app-edu-course-innerbox">
                                 <div class="app-edu-course-img">
-                                    <img src="assets/img/education/course/crs5.png" alt="">
+                                    <img src="{% static 'assets/img/education/course/crs5.png' %}" alt="">
                                 </div>
                                 <div class="app-edu-course-text text-center app-edu-headline position-relative">
                                     <span class="course-cat text-uppercase"><a href="#">Graphic Design</a></span>
@@ -332,7 +333,7 @@
                         <div class="col-lg-4 col-md-6 wow fadeFromUp" data-wow-delay="1000ms" data-wow-duration="1500ms">
                             <div class="app-edu-course-innerbox">
                                 <div class="app-edu-course-img">
-                                    <img src="assets/img/education/course/crs6.png" alt="">
+                                    <img src="{% static 'assets/img/education/course/crs6.png' %}" alt="">
                                 </div>
                                 <div class="app-edu-course-text text-center app-edu-headline position-relative">
                                     <span class="course-cat text-uppercase"><a href="#">Graphic Design</a></span>
@@ -364,7 +365,7 @@
 
     <!-- Start of category section
         ============================================= -->      
-        <section id="app-edu-category" class="app-edu-category-section" data-background="assets/img/education/ct-bg.jpg">
+        <section id="app-edu-category" class="app-edu-category-section" data-background="{% static 'assets/img/education/ct-bg.jpg' %}">
             <div class="container">
                 <div class="app-edu-section-title app-edu-headline text-center center-align pera-content">
                     <span>Learn anything you want</span>
@@ -471,7 +472,7 @@
     <!-- Start of testimonial section
         ============================================= --> 
         <section id="app-edu-testimonial" class="app-edu-testimonial-section position-relative">
-            <span class="app-edu-testimonial-shape position-absolute"><img src="assets/img/education/ts1.png" alt=""></span>
+            <span class="app-edu-testimonial-shape position-absolute"><img src="{% static 'assets/img/education/ts1.png' %}" alt=""></span>
             <div class="container">
                 <div class="app-edu-section-title app-edu-headline text-center center-align pera-content">
                     <span>Learn anything you want</span>
@@ -484,7 +485,7 @@
                             <div class="app-edu-testimonial-innerbox">
                                 <div class="app-edu-testimonial-author clearfix">
                                     <div class="app-edu-testimonial-img float-left">
-                                        <img src="assets/img/education/tst2.jpg" alt="">
+                                        <img src="{% static 'assets/img/education/tst2.jpg' %}" alt="">
                                     </div>
                                     <div class="app-edu-testimonial-author-text app-edu-headline">
                                         <h3><a href="#">Robert Williums</a></h3>
@@ -510,7 +511,7 @@
                             <div class="app-edu-testimonial-innerbox">
                                 <div class="app-edu-testimonial-author clearfix">
                                     <div class="app-edu-testimonial-img float-left">
-                                        <img src="assets/img/education/tst3.jpg" alt="">
+                                        <img src="{% static 'assets/img/education/tst3.jpg' %}" alt="">
                                     </div>
                                     <div class="app-edu-testimonial-author-text app-edu-headline">
                                         <h3><a href="#">Paul Harrion</a></h3>
@@ -536,7 +537,7 @@
                             <div class="app-edu-testimonial-innerbox">
                                 <div class="app-edu-testimonial-author clearfix">
                                     <div class="app-edu-testimonial-img float-left">
-                                        <img src="assets/img/education/tst4.jpg" alt="">
+                                        <img src="{% static 'assets/img/education/tst4.jpg' %}" alt="">
                                     </div>
                                     <div class="app-edu-testimonial-author-text app-edu-headline">
                                         <h3><a href="#">Rebecca Palmar</a></h3>
@@ -562,7 +563,7 @@
                             <div class="app-edu-testimonial-innerbox">
                                 <div class="app-edu-testimonial-author clearfix">
                                     <div class="app-edu-testimonial-img float-left">
-                                        <img src="assets/img/education/tst1.jpg" alt="">
+                                        <img src="{% static 'assets/img/education/tst1.jpg' %}" alt="">
                                     </div>
                                     <div class="app-edu-testimonial-author-text app-edu-headline">
                                         <h3><a href="#">Sarah Jessica</a></h3>
@@ -644,7 +645,7 @@
     <!-- Start of blog section
         ============================================= -->         
         <section id="app-edu-blog" class="app-edu-blog-section position-relative">
-            <span class="app-edu-blog-vector position-absolute"><img src="assets/img/education/blg-v.png" alt=""></span>
+            <span class="app-edu-blog-vector position-absolute"><img src="{% static 'assets/img/education/blg-v.png' %}" alt=""></span>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -656,7 +657,7 @@
                         <div class="app-edu-blog-content">
                             <div class="app-edu-blog-innerbox position-relative wow fadeFromUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <div class="app-edu-blog-img position-absolute">
-                                    <img src="assets/img/education/blg1.jpg" alt="">
+                                    <img src="{% static 'assets/img/education/blg1.jpg' %}" alt="">
                                 </div>
                                 <div class="app-edu-blog-text app-edu-headline">
                                     <div class="app-edu-blog-meta">
@@ -668,7 +669,7 @@
                             </div>
                             <div class="app-edu-blog-innerbox position-relative wow fadeFromUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                                 <div class="app-edu-blog-img position-absolute">
-                                    <img src="assets/img/education/blg1.jpg" alt="">
+                                    <img src="{% static 'assets/img/education/blg1.jpg' %}" alt="">
                                 </div>
                                 <div class="app-edu-blog-text app-edu-headline">
                                     <div class="app-edu-blog-meta">
@@ -691,7 +692,7 @@
 
     <!-- Start of footer section
         ============================================= -->         
-        <section id="app-edu-footer" class="app-edu-footer-section" data-background="assets/img/education/f-bg.png">
+        <section id="app-edu-footer" class="app-edu-footer-section" data-background="{% static 'assets/img/education/f-bg.png' %}">
             <div class="container">
                 <div class="app-edu-footer-newslatter">
                     <div class="row">
@@ -716,7 +717,7 @@
                             <div class="app-edu-footer-widget  app-edu-headline pera-content ul-li-block">
                                 <div class="app-edu-logo-widget">
                                     <div class="app-edu-footer-logo">
-                                        <a href="#"><img src="assets/img/education/logo/logo1.png" alt=""></a>
+                                        <a href="#"><img src="{% static 'assets/img/education/logo/logo1.png' %}" alt=""></a>
                                     </div>
                                     <p>Hedatat non proident, sunt in culpa qui offic ia  dolore eu fugiat nul lamco laboris nisi ut aliq uip ex ea commodo consequat. Duis aute irure dolor in reprehe  fugiat </p>
                                     <div class="app-edu-footer-social">
@@ -801,17 +802,17 @@
         ============================================= -->     
 
         <!-- JS library -->
-        <script src="assets/js/jquery.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/appear-2.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/jquery.fancybox.js"></script>
-        <script src="assets/js/tilt.jquery.min.js"></script>
-        <script src="assets/js/owl.js"></script>
-        <script src="assets/js/typer-new.js"></script>
-        <script src="assets/js/odometer.js"></script>
-        <script src="assets/js/parallax-scroll.js"></script>
-        <script src="assets/js/education.js"></script>
-    </body>
-    </html>                    
+    <script src="{% static 'assets/js/jquery.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/appear-2.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'assets/js/tilt.jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/typer-new.js' %}"></script>
+    <script src="{% static 'assets/js/odometer.js' %}"></script>
+    <script src="{% static 'assets/js/parallax-scroll.js' %}"></script>
+    <script src="{% static 'assets/js/education.js' %}"></script>
+</body>
+</html>                      
