@@ -50,6 +50,15 @@ def get_message(message:types.Message):
         bot.send_message(user.id_user, mail.description)
     bot.send_message(message.chat.id, "Рассылка окончена")
 
+def send_message_to_group_day(day_mailing_instance):
+    chat_id = day_mailing_instance.group.chat_id
+    message_text = f"Здравствуйте, ребята, у вас сегодня урок в {day_mailing_instance.lesson_time.strftime('%H:%M')}"
+    try:
+        result = bot.send_message(chat_id, message_text)
+        print(f"Сообщение успешно отправлено. Результат: {result}")
+    except Exception as e:
+        print(f"Ошибка при отправке сообщения в Telegram: {e}")
+
 def send_message_to_group(start_mailing_instance):
     chat_id = start_mailing_instance.group.chat_id
     message = create_message(start_mailing_instance)

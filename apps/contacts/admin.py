@@ -15,7 +15,14 @@ class MailingGroupFilterAdmin(admin.ModelAdmin):
     list_filter = ('group',)
     search_fields = ('group',)
 
+#######################################efghng#########################################################################################################################################
+
+class DayMailingFilterAdmin(admin.ModelAdmin):
+    list_filter = ('group',)
+    search_fields = ('group',)
+
 ################################################################################################################################################################################
 
+admin.site.register(models.DayMailing, DayMailingFilterAdmin)
 admin.site.register(models.MailingGroup, MailingGroupFilterAdmin)
 admin.site.register(models.StartMailing, StartMailingFilterAdmin)

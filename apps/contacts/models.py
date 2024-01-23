@@ -3,6 +3,12 @@ from apps.base import models as base_models
 from apps.secondary import models as secon_models
 from ckeditor.fields import RichTextField
 from django_resized.forms import ResizedImageField 
+from django.utils import timezone
+import schedule
+import threading
+import time  # Добавьте этот импорт
+from apps.telegram_bot.views import send_message_to_group_day
+
 # Create your models here.
 
 class StartMailing(models.Model):
@@ -88,13 +94,62 @@ class MailingGroup(models.Model):
 
 
     def __str__(self):
-        return f"{self.group} "
+        return f"Рассылка номер: {self.id}"
     
     class Meta:
-        verbose_name = "1) Отправить рассылку  всем"
-        verbose_name_plural = "1) Отправить рассылку  всем"
+        verbose_name = "2) Отправить рассылку  всем"
+        verbose_name_plural = "2) Отправить рассылку  всем"
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         from apps.telegram_bot.views import send_message_with_image
         send_message_with_image(self)
+
+
+class DayMailing(models.Model):
+    group = models.ForeignKey(
+        secon_models.AddChat,
+        related_name="day_group_mailing",
+        on_delete=models.CASCADE,
+        verbose_name="Выберите группу"
+    )
+    active = models.BooleanField(
+        default=False,
+        verbose_name="Включить/Отключить"
+    )
+    lesson_time = models.TimeField(
+        verbose_name="Время урока",
+        blank=True, null=True
+    )
+    days = models.DateField(
+        verbose_name="Выберите день",
+        blank=True, null=True
+    )
+    time = models.TimeField(
+        verbose_name="Выберите время",
+        blank=True, null=True
+    )
+
+    def __str__(self):
+        return f"Рассылка номер: {self.id}"
+
+    class Meta:
+        verbose_name = "3) Настроить дневную рассылку"
+        verbose_name_plural = "3) Настроить дневную рассылку"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        # Если рассылка активна, планируем отправку сообщения в указанное время и день
+        if self.active:
+            scheduled_time = timezone.make_aware(timezone.datetime.combine(self.days, self.time))
+            now = timezone.now()
+
+            # Если время уже прошло, переносим отправку на следующий день
+            if now > scheduled_time:
+                scheduled_time += timezone.timedelta(days=1)
+
+            # Вычисляем разницу во времени между текущим моментом и временем отправки
+            time_difference = (scheduled_time - now).total_seconds()
+
+            # Запускаем таймер для отправки сообщения по расписанию
+            threading.Timer(time_difference, send_message_to_group_day, args=[self]).start()

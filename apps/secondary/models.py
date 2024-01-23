@@ -36,8 +36,8 @@ class AddChat(models.Model):
         super(AddChat, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name = "3) Добавить группу"
-        verbose_name_plural = "3) Добавить группу"
+        verbose_name = "1) Добавить группу"
+        verbose_name_plural = "1) Добавить группу"
 
 
 class AddStudent(models.Model):
@@ -75,8 +75,8 @@ class AddStudent(models.Model):
         return f"{self.name} - {self.group}"
     
     class Meta:
-        verbose_name = "1) Добавить студента"
-        verbose_name_plural = "1) Добавить студента"
+        verbose_name = "4) Добавить студента"
+        verbose_name_plural = "4) Добавить студента"
 
 class AddTeacher(models.Model):
     group = models.ForeignKey(
