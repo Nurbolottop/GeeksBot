@@ -105,7 +105,6 @@ class MailingGroup(models.Model):
         from apps.telegram_bot.views import send_message_with_image
         send_message_with_image(self)
 
-
 class DayMailing(models.Model):
     group = models.ForeignKey(
         secon_models.AddChat,
@@ -119,10 +118,6 @@ class DayMailing(models.Model):
     )
     lesson_time = models.TimeField(
         verbose_name="Время урока",
-        blank=True, null=True
-    )
-    days = models.DateField(
-        verbose_name="Выберите день",
         blank=True, null=True
     )
     time = models.TimeField(
@@ -141,15 +136,28 @@ class DayMailing(models.Model):
         super().save(*args, **kwargs)
         # Если рассылка активна, планируем отправку сообщения в указанное время и день
         if self.active:
-            scheduled_time = timezone.make_aware(timezone.datetime.combine(self.days, self.time))
-            now = timezone.now()
+            for day_add in self.day_mailing.all():
+                scheduled_time = timezone.make_aware(timezone.datetime.combine(day_add.days, self.time))
+                now = timezone.now()
 
-            # Если время уже прошло, переносим отправку на следующий день
-            if now > scheduled_time:
-                scheduled_time += timezone.timedelta(days=1)
+                # Если время уже прошло, переносим отправку на следующий день
+                if now > scheduled_time:
+                    scheduled_time += timezone.timedelta(days=1)
 
-            # Вычисляем разницу во времени между текущим моментом и временем отправки
-            time_difference = (scheduled_time - now).total_seconds()
+                # Вычисляем разницу во времени между текущим моментом и временем отправки
+                time_difference = (scheduled_time - now).total_seconds()
 
-            # Запускаем таймер для отправки сообщения по расписанию
-            threading.Timer(time_difference, send_message_to_group_day, args=[self]).start()
+                # Запускаем таймер для отправки сообщения по расписанию
+                threading.Timer(time_difference, send_message_to_group_day, args=[self]).start()
+
+class DayAdd(models.Model):
+    mailing = models.ForeignKey(
+        DayMailing,
+        related_name="day_mailing",
+        on_delete=models.CASCADE,
+        verbose_name="Добавьте дни"
+    )
+    days = models.DateField(
+        verbose_name="Выберите день",
+        blank=True, null=True
+    )

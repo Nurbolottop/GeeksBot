@@ -17,10 +17,14 @@ class MailingGroupFilterAdmin(admin.ModelAdmin):
 
 #######################################efghng#########################################################################################################################################
 
-class DayMailingFilterAdmin(admin.ModelAdmin):
-    list_filter = ('group',)
-    search_fields = ('group',)
+class DayAddInline(admin.TabularInline):
+    model = models.DayAdd
+    extra = 1  
 
+class DayMailingFilterAdmin(admin.ModelAdmin):
+    list_display = ('group', 'active', 'lesson_time', 'time')
+    search_fields = ('group',)
+    inlines = [DayAddInline]
 ################################################################################################################################################################################
 
 admin.site.register(models.DayMailing, DayMailingFilterAdmin)
